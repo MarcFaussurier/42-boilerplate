@@ -1,4 +1,4 @@
-## This repository is a simple test driven environement developement made for use at 42 school. Fell free to create your repos for your days under days_c/xx/ and enjoy tests !
+## This repository is a simple project structure with test driven developement features ready to use. It is mainly built for 42 "pisicne". Feel free to add new tests.
 
 
 # Default commands behaviour : 
@@ -16,6 +16,12 @@
 For now, only the basics functions of day 00 are tests covered. functions such as combinaisons one are painful to test without writing the answer and very easy to check using the subject. 
 
 I might update this repo with new tests, feel free to add yours too.
+
+# Usage 
+
+ - create your days under days_c (for example : 00/ex00/blabla.c)
+ - make watch
+ - keep retrying as long as you dont have the success notification!
 
 # Credits : 
 minunit for the nice tests : https://github.com/siu/minunit
