@@ -24,5 +24,5 @@ I might update this repo with new tests, feel free to add yours too.
  - keep retrying as long as you dont have the success notification!
 
 # Credits : 
-minunit for the nice tests : https://github.com/siu/minunit
-libc-test : for the upcoming str / memory functions https://github.com/PocketCluster/libc-test
+ - minunit for the nice tests : https://github.com/siu/minunit
+ - libc-test : for the upcoming str / memory functions https://github.com/PocketCluster/libc-test
