@@ -18,7 +18,6 @@ void	test_ft_putchar()
 		if (c == 127)
 			break ;
 	}
-	//write(1, "o", 1);
 }
 void	true_function()
 {
