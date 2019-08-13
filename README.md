@@ -21,7 +21,7 @@ I might update this repo with new tests, feel free to add yours too.
 
  - create your days under days_c (for example : 00/ex00/blabla.c)
  - make watch
- - keep retrying as long as you dont have the success notification!
+ - keep editing your code as long as you dont have the success notification!
 
 # Credits : 
  - minunit for the nice tests : https://github.com/siu/minunit
