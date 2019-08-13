@@ -28,7 +28,7 @@ void	true_function()
 	while (1)
 	{
 		c += 1;
-		write(1, &c, 1);
+		printf("%c", c);
 		if (c == 127)
 			break ;
 	}
