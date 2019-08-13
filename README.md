@@ -1,4 +1,4 @@
-## This repository is a simple project structure with test driven developement features ready to use. It is mainly built for 42 "pisicne". Feel free to add new tests.
+## This repository is a simple project structure with test driven developement features ready to use. It is mainly built for 42 "piscine".
 
 
 # Default commands behaviour : 
