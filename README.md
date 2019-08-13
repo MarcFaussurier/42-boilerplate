@@ -5,7 +5,7 @@ Default commands behaviour :
 
 make   => norminette and compiles the test suite for all days then software will ask you for days to test 
 
-make main   => compiles but without norminette (when you are at home) 
+make main   => compiles but without norminette
 
 make mainall => compiles without norminette and run all tests
 
