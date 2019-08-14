@@ -23,9 +23,11 @@ int		main(int argc, char**argv)
 	int		i;	
 	int		days[99];
 	int		innb;
-	int		nb_days = 1;
-	int		available_days[] = {0};
+	int		available_days[] = {0, 3};
+	int		nb_days = sizeof available_days / sizeof (int);
+	int		output;
 
+	output = 0;
 	should_stop = 0;
 	if (argc == 1)
 	{
@@ -78,14 +80,20 @@ int		main(int argc, char**argv)
 				printf("You requested day 00.\n");
 				testc00();
 				break ;
+		
+			case (3) :
+				printf("You requested day 03.\n");
+				testc03();
+				break ;
 			default :
 				printf("Requested day %i is still not tested.\n", days[i]);
 				break ;
 
 		}
+		output += minunit_fail;
 		i += 1;
 	}
 	MU_REPORT();
-	return (minunit_fail);
+	return (output);
 }
 

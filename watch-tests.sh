@@ -7,7 +7,7 @@ source utils.sh;
 ico=$(pwd)/images/test.png;          	# Icon of the image used for notifications
 success=$(pwd)/images/success.png;   	# Tests success icon
 fail=$(pwd)/images/fail.png;        	# Tests failed icon
-dirs="./days_c/ ./includes/ ./tests/";  # Folders to watch
+dirs="./main.c ./days_c/ ./includes/ ./tests/";  # Folders to watch
 cur_dir=$(pwd);
 source ~/.bash_profile;
 export PATH=${cur_dir}/libs/homebrew/bin:$PATH;
