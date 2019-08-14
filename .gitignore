@@ -1,5 +1,7 @@
 .DS_Store
+days_c/*/*/*.c
 *.out
 *.swp
 *.swo
-/libs/*
+libs/minunit
+libs/homebrew
