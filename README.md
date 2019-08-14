@@ -18,7 +18,7 @@ For now, only the basics functions of day 00 are tests covered. functions such a
 I might update this repo with new tests, feel free to add yours too.
 
 # Usage 
-
+ - ./deps for installing deps
  - create your days under days_c (for example : 00/ex00/blabla.c)
  - make watch
  - keep editing your code as long as you dont have the success notification!
