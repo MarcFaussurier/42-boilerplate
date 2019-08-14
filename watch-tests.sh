@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 source async.sh;
 source utils.sh;
@@ -24,15 +24,16 @@ function buildAndTest() {
     removePreviousNotifications;
     echo "Compiling and running tests."
     if [[ "$OSTYPE" == "darwin"* ]]; then
-        terminal-notifier -title "${recompile_tests_title}" -message "${recompile_tests_msg}"  -appIcon "${ico}"
+		terminal-notifier -title "${recompile_tests_title}" -message "${recompile_tests_msg}"  -appIcon "${ico}"
     else
         notify-send -i "${ico}" "${recompile_tests_title}" "${recompile_tests_msg}";
     fi;
     make mainall;
+	./a.out all;
     if [[ $? == "0" ]]; then
     	removePreviousNotifications;
     	if [[ "$OSTYPE" == "darwin"* ]]; then
-            terminal-notifier -title "${tests_success_title}" -message "${tests_success_desc}"  -appIcon "${success}"
+           terminal-notifier -title "${tests_success_title}" -message "${tests_success_desc}"  -appIcon "${success}"
         elif [[ "$OSTYPE" == "linux-gnu" ]]; then
             notify-send -i "${success}" "${tests_success_title}" "${tests_success_desc}";
         fi;

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 #                                               #
 #   ASYNC UTILITY FOR SHELL SCRIPTS @LYON1      #

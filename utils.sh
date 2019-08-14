@@ -1,4 +1,4 @@
-!/usr/bin/env bash
+#!/bin/sh
 
 GREEN='\e[32m'; CYAN='\e[36m'; NC='\e[0m';RED='\e[31m';
 job1=0; job2=0;
@@ -54,3 +54,55 @@ function removePreviousNotifications() {
         killall notify-osd;
     fi;
 }
+
+# deps manager function
+function install {
+    # then perform a simple git clone / update
+    printf "________________________\n";
+    # if given repo does not exist, we clone it
+    if [[ ! -d $1 ]]; then
+        printf "${GREEN} Installing${NC} => ${CYAN}$1${NC} (@$2) ... \n";
+        mkdir -p ${1};
+        printf "Cloning from $3 \n";
+        git clone ${3} -b $2 ./${1} --recursive;
+    # else we update it
+    else
+        printf "${GREEN} Updating${NC} => ${CYAN}$1${NC} (@$2) ... \n";
+        cd ./$1;
+        git fetch --all;
+        git reset --soft $2;
+        cd ./../;
+    fi;
+    # we run existing build commands if given
+    if [[ ! -z $4 ]]; then
+        cd ./$1;
+        firstString=$4;
+        secondString=$1;
+        toeval=${firstString//%LIBNAME%/$secondString};
+        echo "${toeval}";
+        eval "${toeval}";
+        cd ./../;
+    fi;
+    # then we add the lib to the installed ones
+    CURRENT_LIBS+=("$1/");
+};
+
+# called before begin of installation script
+function goToLibs() {
+    cd ./libs;
+};
+
+# called after begin of installation script
+function checkForRemovedDependencies() {
+    # for each folders in libs folders
+    for d in */ ; do
+        # if the given folder was not given in deps file, we assume that the folder is no longer required
+        if [[ ! " ${CURRENT_LIBS[*]} " == *"$d"* ]]; then
+            # we remove it
+            printf "${RED} Uninstalling${NC} => ./libs/${CYAN}$d${NC} ... \n";
+            rm -rf "${d}";
+        fi;
+    done;
+    cd ./../;
+};
+
