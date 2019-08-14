@@ -31,8 +31,7 @@ function buildAndTest() {
     else
         notify-send -i "${ico}" "${recompile_tests_title}" "${recompile_tests_msg}";
     fi;
-    make mainall;
-	./a.out all;
+    make mainall && ./a.out all;
     if [[ $? == "0" ]]; then
     	removePreviousNotifications;
     	if [[ "$OSTYPE" == "darwin"* ]]; then
