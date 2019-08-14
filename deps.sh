@@ -14,14 +14,12 @@ install homebrew    master          https://github.com/Homebrew/brew.git;
 
 CCPATH=$(pwd);
 echo "export PATH=${CCPATH}/homebrew/bin:\$PATH" >> ~/.bash_profile;
-
-source ~/.bash_profile;
+export PATH=${CCPATH}/homebrew/bin:$PATH;
 
 # MacOS
 if [[ "$OSTYPE" == "darwin"* ]]; then
     brew install        terminal-notifier;
     brew install        fswatch;
-
 # Linux
 elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     sudo apt install    inotify-tools;
