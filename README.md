@@ -2,10 +2,10 @@
 
 # Current test coverage :
 
--C00 ~70%
--C01 ~0%
--C02 ~0%
--C03 100%
+- C00 ~70%
+- C01 ~0%
+- C02 ~0%
+- C03 100%
 
 # Default commands behaviour : 
 
