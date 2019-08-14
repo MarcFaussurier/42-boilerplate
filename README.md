@@ -1,5 +1,11 @@
 ## This repository is a simple project structure with test driven developement features ready to use. It is mainly built for 42 "piscine".
 
+# Current test coverage :
+
+C00 ~70%
+C01 ~0%
+C02 ~0%
+C03 100%
 
 # Default commands behaviour : 
 
