@@ -1,3 +1,16 @@
+# **************************************************************************** #
+#                                                           LE - /             #
+#                                                               /              #
+#    watch-tests.sh                                   .::    .:/ .      .::    #
+#                                                  +:+:+   +:    +:  +:+:+     #
+#    By: mfaussur <marvin@le-101.fr>                +:+   +:    +:    +:+      #
+#                                                  #+#   #+    #+    #+#       #
+#    Created: 2019/08/14 22:55:15 by mfaussur     #+#   ##    ##    #+#        #
+#    Updated: 2019/08/14 22:56:55 by mfaussur    ###    #+. /#+    ###.fr      #
+#                                                          /                   #
+#                                                         /                    #
+# **************************************************************************** #
+
 #!/bin/sh
 
 source async.sh;
@@ -21,6 +34,8 @@ tests_success_desc="Congratulation, sir!";
 tests_failed_title="TEST FAILED !!";
 tests_failed_desc="Please fix your code before pushing it, sir!";
 
+cday=$1;
+
 # Function called at each folder source code update
 function buildAndTest() {
     # We run tests
@@ -31,7 +46,7 @@ function buildAndTest() {
     else
         notify-send -i "${ico}" "${recompile_tests_title}" "${recompile_tests_msg}";
     fi;
-    make mainall && ./a.out all;
+    make $cday && ./a.out;
     if [[ $? == "0" ]]; then
     	removePreviousNotifications;
     	if [[ "$OSTYPE" == "darwin"* ]]; then
