@@ -6,7 +6,7 @@
 /*   By: mfaussur <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/08/14 13:34:29 by mfaussur     #+#   ##    ##    #+#       */
-/*   Updated: 2019/08/14 20:44:12 by mfaussur    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/08/15 12:24:03 by mfaussur    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -29,6 +29,7 @@ MU_TEST(t_ft_strncmp)
 {
 	mu_assert(ft_strncmp("abcd", "abcde", 3) ==  0, "strncmp compares pas n");
 	mu_assert(ft_strncmp("abc", "abe", 3) ==  -2, "strncmp fails to compare n-1st first");
+	mu_assert(ft_strncmp("abcd", "pabcde", 0) ==  0, "strncmp compares pas n");
 }
 
 MU_TEST(t_ft_strcat)
