@@ -6,7 +6,7 @@
 /*   By: mfaussur <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/08/14 13:34:29 by mfaussur     #+#   ##    ##    #+#       */
-/*   Updated: 2019/08/15 12:58:40 by mfaussur    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/08/15 14:15:02 by mfaussur    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -98,7 +98,7 @@ void	testputnbrbase()
 {
 	char *hex		=  "0123456789ABCDEF";
 	char *decimal	= "0123456789";
-	char *poney		= "poney vif";
+	char *poney		= "poneyvif";
 
 	ft_putnbr_base(-2147483648, hex);
 	ft_putnbr_base(-2147483648, decimal);
@@ -120,12 +120,11 @@ void	testputnbrbase()
 
 void	trueputnbrbase()
 {
-	printf("-80000000-2147483648- yifiievin\n-2A-42-yv\n00p\n26899865oyyio\n");
+	printf("-80000000-2147483648-npppppppppp\n-2A-42-vn\n00p\n26899865nenoo\n");
 }
 
 MU_TEST(t_ft_putnbr_base)
 {
-	printf("%s\n", ob(trueputnbrbase));
 	mu_assert_string_eq(ob(trueputnbrbase), ob(testputnbrbase));
 }
 
@@ -136,13 +135,13 @@ MU_TEST(t_ft_atoi_base)
 
 	char *hex		=  "0123456789ABCDEF";
 	char *decimal	= "0123456789";
-	char *poney		= "poney vif";
+	char *poney		= "poneyvif";
 
-	sprintf(buffer2, "-2147483648-2147483648-2147483648\n-42-42-42\n000\n986598659865\n");
+	sprintf(buffer2, "-2147483648-2147483648-2147483648\n-42-42-37\n000\n986598656449\n");
 	sprintf(buffer1, "%i%i%i\n%i%i%i\n%i%i%i\n%i%i%i\n", 
 			ft_atoi_base("-80000000", hex),
 			ft_atoi_base("-2147483648", decimal),
-			ft_atoi_base("- yifiievin", poney),
+			ft_atoi_base("-npppppppppp", poney),
 			ft_atoi_base("-2A", hex),
 			ft_atoi_base("-42", decimal),
 			ft_atoi_base("-yv", poney),
